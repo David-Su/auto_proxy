@@ -1,0 +1,58 @@
+{
+  "inbound": {
+    "protocol": "vmess",
+    "listen": "127.0.0.1",
+    "port": 8964,
+    "settings": {
+      "clients": [
+        {
+          "id": "%s"
+        }
+      ]
+    },
+    "streamSettings": {
+      "network": "ws",
+      "wsSettings": {
+        "path": "/%s"
+      }
+    },
+    "sniffing": {
+      "enabled": true,
+      "destOverride": [
+        "http",
+        "tls"
+      ]
+    }
+  },
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    },
+    {
+      "tag": "warp",
+      "protocol": "socks",
+      "settings": {
+        "servers": [
+          {
+            "address": "127.0.0.1",
+            "port": 40000,
+            "users": [
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "openai.com",
+          "geosite:netflix"
+        ],
+        "outboundTag": "warp"
+      }
+    ]
+  }
+}
