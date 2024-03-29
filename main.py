@@ -48,15 +48,15 @@ def write_config():
 
 
 if __name__ == '__main__':
-    # domain = input("请输入域名：")
-    # path = input("请输入路径（不带/）：")
-    # userid = input("请输入用户id：")
-    # email = input("请输入邮箱：")
+    domain = input("请输入域名：")
+    path = input("请输入路径（不带/）：")
+    userid = input("请输入用户id：")
+    email = input("请输入邮箱：")
 
-    domain = "a.fqym.top"
-    path = "uimpaw"
-    userid = "75d243ec-2ff5-47a7-8bc4-a5cc932e2950"
-    email = "david.suk0614@gmail.com"
+    # domain = "a.fqym.top"
+    # path = "uimpaw"
+    # userid = "75d243ec-2ff5-47a7-8bc4-a5cc932e2950"
+    # email = "david.suk0614@gmail.com"
 
     # 获取当前系统信息
     os_release = execute("awk -F= '/^NAME/{print $2}' /etc/os-release")
